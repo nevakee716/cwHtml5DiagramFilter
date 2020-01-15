@@ -51,7 +51,6 @@
 
       for (var i = 0; i < this.paletteEntry.Regions.length; i++) {
         var region = this.paletteEntry.Regions[i];
-        cwApi.pluginManager.execute("CwDiagramViewer.beforeDrawShapeRegion", this, this.shape, region);
         var regionZone = {};
         var other = false;
         var textRegionArea = {};
@@ -63,7 +62,7 @@
         }
 
         regionZone = this.getRegionSize(region);
-
+        regionZone.RegionSequence = region.RegionSequence;
         regionZone.explodedDiagrams = [];
         switch (region.RegionTypeString) {
           case "ExplosionWithRuleAndReferenceProperty":
@@ -169,7 +168,6 @@
             this.boundingBoxes.push(regionZone);
           }
         }
-        cwApi.pluginManager.execute("CwDiagramViewer.afterDrawShapeRegion", this, this.shape, region);
       }
     } else {
       // Set all objects not contained in palette
