@@ -13,15 +13,15 @@
     this.PsgDiagramFilter[diagramViewer.id] = new cwApi.customLibs.PsgDiagramFilter(diagramViewer);
   };
 
-  PsgDiagramFilterManager.prototype.setGlobalAlphaRegion = function(diagramViewer, shape) {
-    if (this.PsgDiagramFilter.hasOwnProperty(diagramViewer.id)) {
-      this.PsgDiagramFilter[diagramViewer.id].setGlobalAlphaRegion(diagramViewer, shape);
+  PsgDiagramFilterManager.prototype.setGlobalAlphaRegion = function(diagramShape, shape, region) {
+    if (this.PsgDiagramFilter.hasOwnProperty(diagramShape.diagramCanvas.id)) {
+      this.PsgDiagramFilter[diagramShape.diagramCanvas.id].setGlobalAlphaRegion(diagramShape, region);
     }
   };
 
-  PsgDiagramFilterManager.prototype.resetGlobalAlpha = function(diagramViewer, shape) {
-    if (this.PsgDiagramFilter.hasOwnProperty(diagramViewer.id)) {
-      this.PsgDiagramFilter[diagramViewer.id].resetGlobalAlpha(diagramViewer, shape);
+  PsgDiagramFilterManager.prototype.resetGlobalAlpha = function(diagramShape, shape, region) {
+    if (this.PsgDiagramFilter.hasOwnProperty(diagramShape.diagramCanvas.id)) {
+      this.PsgDiagramFilter[diagramShape.diagramCanvas.id].resetGlobalAlpha(diagramShape, region);
     }
   };
 
