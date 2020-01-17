@@ -14,11 +14,11 @@
         </thead>
         <tbody>
           <tr ng-if="region.RegionType == 2 ||region.RegionType == 3 || region.RegionType == 4 || region.RegionType == 18" ng-repeat-start="region in paletteEntry.Regions">
-            <td class="buttonTd">
-              <i class="fa fa-eye" aria-hidden="true"></i>
+            <td class="buttonTd" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence].enable = !configuration[objectTypeScriptName].regions[region.RegionSequence].enable">
+              <i class="fa fa-eye {{configuration[objectTypeScriptName].regions[region.RegionSequence].enable? 'active' : ''}}" aria-hidden="true"></i>
             </td>
-            <td class="buttonTd">
-              <i class="fa fa-calculator" aria-hidden="true"></i>
+            <td class="buttonTd" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence].calc = !configuration[objectTypeScriptName].regions[region.RegionSequence].calc">
+              <i ng-if="region.RegionType == 18" class="fa fa-calculator {{configuration[objectTypeScriptName].regions[region.RegionSequence].calc? 'active' : ''}}" aria-hidden="true"></i>
             </td>
             <td class="filterableRegion" ng-if="region.RegionType == 2">
               {{region.RegionTypeString}} {{getObjectType(region.RegionData.TargetObjectTypeScriptName).name}}

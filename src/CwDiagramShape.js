@@ -105,12 +105,10 @@
         regionZone.IsExplosionRegion = region.IsExplosionRegion;
         regionZone.RegionTypeString = region.RegionTypeString;
         regionZone.AssociationMultiplePropertyNames = region.AssociationMultiplePropertyNames;
-        // Associactions no need to be clickable, following specifications
-        if (region.RegionTypeString === "MultiplePropertyAssociations" || region.RegionTypeString === "Association") {
-          regionZone.Clickable = false;
-        } else {
-          regionZone.Clickable = region.Clickable;
-        }
+
+        // Associactions region are NOW clickable
+        regionZone.Clickable = region.Clickable;
+
         regionZone.SourcePropertyTypeScriptName = region.SourcePropertyTypeScriptName;
         regionZone.ReferencePropertyTypeScriptName = region.ReferencePropertyTypeScriptName;
         regionZone.MultiplePropertyNames = region.MultiplePropertyNames;
@@ -143,8 +141,11 @@
           textRegionArea = this.prepareTextInsideAnyShape(this.diagramCanvas.ctx, regionZone, style, regionZone.RegionResultReadyToDisplay.symbol, regionZone.VerticalText, regionZone.VerticalTextDirection);
           // Calculate exact text position inside region
           if (regionZone.RegionTypeString === "MultiplePropertyAssociations") {
-            text = this.getAssociationTypeCustomRegionText(regionZone);
-            getTextandCoordinates = cwDiagramShape.getTextSplitInLinesForAssociationsRegionCustom(this.diagramCanvas.ctx, text, regionZone.HorizontalJustification, regionZone.VerticalJustification, textRegionArea.x, textRegionArea.y, style.Font.Size, textRegionArea.w, textRegionArea.h);
+            text = "9";
+            regionZone.VerticalJustification = "CentreJustify";
+            regionZone.HorizontalJustification = "CentreJustify";
+            regionZone.DisplayText = true;
+            getTextandCoordinates = this.calculatePositionTextInsideRegion(this.diagramCanvas.ctx, regionZone, text, style, textRegionArea);
           } else {
             getTextandCoordinates = this.calculatePositionTextInsideRegion(this.diagramCanvas.ctx, regionZone, text, style, textRegionArea);
           }

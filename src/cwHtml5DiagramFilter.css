@@ -37,7 +37,7 @@
   width: 30px;
   text-align: center;
 }
-.cw-diagram-filter-container .buttonTd i {
+.cw-diagram-filter-container .buttonTd i.active {
   color: #03a0ce;
 }
 .cw-diagram-filter-container .cwPropertiesTableHeader i.fa {

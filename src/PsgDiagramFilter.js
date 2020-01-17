@@ -44,7 +44,7 @@
     } else {
       this.config = null;
     }
-
+    this.paletteEntrySortByObjectType = this.getConfiguration();
     if (!diagramViewer.isImageDiagram()) {
       this.getRegion(diagramViewer);
       this.createFilterButton(diagramViewer);
@@ -104,7 +104,7 @@
 
     this.setupTemplate(diagramViewer);
     cwApi.CwPopout.onClose(function() {
-      that.setupSearchParameters(false);
+      //that.setupSearchParameters(false);
     });
   };
 
@@ -130,7 +130,7 @@
   };
 
   PsgDiagramFilter.prototype.matchPropertyFilter = function(object, filter) {
-    if (filter.scriptname && filter.Operator && filter.Value) {
+    if (filter.scriptname !== undefined && filter.Operator !== undefined && filter.Value !== undefined) {
       let propertyType = cwApi.mm.getProperty(object.objectTypeScriptName, filter.scriptname);
       let objPropertyValue;
       let propertyScriptname = filter.scriptname.toLowerCase();
@@ -179,27 +179,34 @@
     }
   };
 
-  PsgDiagramFilter.prototype.isRegionToDisplay = function(shape, region) {
+  PsgDiagramFilter.prototype.getGlobalAlpha = function(shape, region) {
+    if (region.RegionTypeString === "MultiplePropertyAssociations" && region.TextandCoordinates && region.TextandCoordinates.texts && region.TextandCoordinates.texts.length > 0) region.TextandCoordinates.texts[0].text = "";
     let config = this.configuration[shape.shape.cwObject.objectTypeScriptName.toUpperCase()];
-    if (config === undefined || config.empty) return true;
+    if (config === undefined || config.empty) return 1;
     config = config.regions[region.RegionSequence];
-    if (config === undefined) return true;
-    if (config.enable === false) return false;
-    if (region.RegionTypeString !== "MultiplePropertyAssociations") return true;
+    if (config === undefined) return 1;
+    if (config.enable === false) return 0;
+    if (region.RegionTypeString !== "MultiplePropertyAssociations") return 1;
     let objects = shape.shape.cwObject.associations[region.RegionData.Key];
     let filteredObjects = this.filtersObjects(objects, config.filters);
-    return filteredObjects.length > 0;
+    region.filteredObjects = filteredObjects;
+    if (filteredObjects.length > 0) {
+      if (config.calc === true) region.TextandCoordinates.texts[0].text = filteredObjects.length;
+      return 1;
+    } else {
+      return this.globalAlpha;
+    }
   };
 
   PsgDiagramFilter.prototype.isRegionTypeToDisplay = function(region) {
     return regionToDisplay.indexOf(region.RegionType) !== -1;
   };
 
-  PsgDiagramFilter.prototype.getConfiguration = function(diagramViewer) {
+  PsgDiagramFilter.prototype.getConfiguration = function() {
     var self = this;
     let paletteEntrySortByObjectType = {};
-    Object.keys(diagramViewer.objectTypesStyles).forEach(function(key) {
-      let paletteEntry = diagramViewer.objectTypesStyles[key];
+    Object.keys(this.diagramViewer.objectTypesStyles).forEach(function(key) {
+      let paletteEntry = self.diagramViewer.objectTypesStyles[key];
       let objectTypeScriptName = key.split("|")[0];
       if (paletteEntrySortByObjectType[objectTypeScriptName] === undefined) paletteEntrySortByObjectType[objectTypeScriptName] = [];
       paletteEntrySortByObjectType[objectTypeScriptName].push(paletteEntry);
@@ -213,6 +220,8 @@
         if (self.isRegionTypeToDisplay(r)) self.configuration[objectTypeScriptName].empty = false;
         self.configuration[objectTypeScriptName].regions[r.RegionSequence] = {};
         self.configuration[objectTypeScriptName].regions[r.RegionSequence].expended = false;
+        self.configuration[objectTypeScriptName].regions[r.RegionSequence].enable = true;
+        self.configuration[objectTypeScriptName].regions[r.RegionSequence].calc = false;
         self.configuration[objectTypeScriptName].regions[r.RegionSequence].filters = [];
       });
     });
@@ -240,7 +249,7 @@
           return bannedObjectTypeScriptName.indexOf(objectTypeScriptName) === -1 && self.configuration[objectTypeScriptName].empty !== true;
         };
 
-        $scope.paletteEntrySortByObjectType = self.getConfiguration(diagramViewer);
+        $scope.paletteEntrySortByObjectType = self.paletteEntrySortByObjectType;
         $scope.FilterOperators = ["=", "!=", ">", "<"];
 
         $scope.processFilter = function(filter) {
@@ -294,11 +303,7 @@
 
   PsgDiagramFilter.prototype.setGlobalAlphaRegion = function(shape, region) {
     if (!cwApi.isUndefinedOrNull(shape) && !cwApi.isUndefinedOrNull(shape.shape) && !cwApi.isUndefinedOrNull(shape.shape.cwObject)) {
-      if (this.isRegionToDisplay(shape, region)) {
-        this.diagramViewer.ctx.globalAlpha = 1;
-      } else {
-        this.diagramViewer.ctx.globalAlpha = this.globalAlpha;
-      }
+      this.diagramViewer.ctx.globalAlpha = this.getGlobalAlpha(shape, region);
     }
   };
 
