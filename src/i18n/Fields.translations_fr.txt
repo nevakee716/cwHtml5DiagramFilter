@@ -1,3 +1,4 @@
-label_pt_filter_column_property = Propriété
+﻿label_pt_filter_column_property = Propriété
 label_pt_filter_column_operator = Opérateur
 label_pt_filter_column_value = Valeur
+label_pt_filter_add_new = Ajouter Filtre
