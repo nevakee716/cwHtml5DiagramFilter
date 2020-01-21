@@ -20,12 +20,12 @@
     this.globalAlpha = 0.2;
     this.title1 = "Filter";
     this.title2 = diagramViewer.json.properties.type;
-    this.falseString = "False";
-    this.trueString = "True";
     this.regionsByObjectType = {};
     this.diagramViewer = diagramViewer;
     this.template = this.diagramViewer.json.properties.type;
     var v = cwAPI.getCurrentView();
+
+    // get the saved configuration
     if (v) this.view = v.cwView;
     if (cwApi.customLibs.PsgDiagramFilterConfig) {
       if (cwApi.customLibs.PsgDiagramFilterConfig.hasOwnProperty(this.view)) {
@@ -44,6 +44,7 @@
     } else {
       this.config = null;
     }
+    // get std configuration
     this.paletteEntrySortByObjectType = this.getConfiguration();
     if (!diagramViewer.isImageDiagram()) {
       this.getRegion(diagramViewer);
@@ -180,7 +181,9 @@
   };
 
   PsgDiagramFilter.prototype.getGlobalAlpha = function(shape, region) {
-    if (region.RegionTypeString === "MultiplePropertyAssociations" && region.TextandCoordinates && region.TextandCoordinates.texts && region.TextandCoordinates.texts.length > 0) region.TextandCoordinates.texts[0].text = "";
+    if (region.RegionTypeString === "MultiplePropertyAssociations" && region.TextandCoordinates && region.TextandCoordinates.texts && region.TextandCoordinates.texts.length > 0) {
+      region.TextandCoordinates.texts[0].text = "";
+    }
     let config = this.configuration[shape.shape.cwObject.objectTypeScriptName.toUpperCase()];
     if (config === undefined || config.empty) return 1;
     config = config.regions[region.RegionSequence];
@@ -191,7 +194,7 @@
     let filteredObjects = this.filtersObjects(objects, config.filters);
     region.filteredObjects = filteredObjects;
     if (filteredObjects.length > 0) {
-      if (config.calc === true) region.TextandCoordinates.texts[0].text = filteredObjects.length;
+      if (config.calc === true) region.TextandCoordinates.texts[0].text = filteredObjects.length + " ";
       return 1;
     } else {
       return this.globalAlpha;
