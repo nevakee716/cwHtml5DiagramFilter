@@ -42,7 +42,7 @@
   
   
 
-    <meta name="request-id" content="EF0E:9C0B:E6EE9E:157370F:5E2704FD" data-pjax-transient>
+    <meta name="request-id" content="F222:9C08:BEA46E:11AA9F7:5E27155C" data-pjax-transient>
 
 
 
@@ -54,7 +54,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-    <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="EF0E:9C0B:E6EE9E:157370F:5E2704FD" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-dimension-ga_id" content="" class="js-octo-ga-id" /><meta name="octolytics-dimension-visitor_id" content="4090496450216527101" />
+    <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="F222:9C08:BEA46E:11AA9F7:5E27155C" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-dimension-ga_id" content="" class="js-octo-ga-id" /><meta name="octolytics-dimension-visitor_id" content="2633965734680008028" />
 
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" />
 
@@ -74,11 +74,11 @@
 
       <meta name="expected-hostname" content="github.com">
 
-      <meta name="js-proxy-site-detection-payload" content="NjczMjlkMjQ0NzU0YTI4NGUyZWMzMjQyYzA4Zjg0ZDg0MDdmZWU4ZmNkZTI2ZDg5MjBhM2YwOWEwOTFkMmM3Ynx7InJlbW90ZV9hZGRyZXNzIjoiMjEzLjI0NS40NS4xNTQiLCJyZXF1ZXN0X2lkIjoiRUYwRTo5QzBCOkU2RUU5RToxNTczNzBGOjVFMjcwNEZEIiwidGltZXN0YW1wIjoxNTc5NjE1NDg2LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+      <meta name="js-proxy-site-detection-payload" content="MWZjMWIzY2M2NDM4ZWM0ZDUxNmQ1YzczY2E1ZTA2YmI1NDg5YmQ5N2EwOGRiYzcwZDBiNjhkZGFhNzk4ZTQyZnx7InJlbW90ZV9hZGRyZXNzIjoiMjEzLjI0NS40NS4xNTQiLCJyZXF1ZXN0X2lkIjoiRjIyMjo5QzA4OkJFQTQ2RToxMUFBOUY3OjVFMjcxNTVDIiwidGltZXN0YW1wIjoxNTc5NjE5Njc2LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
 
     <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS">
 
-    <meta name="html-safe-nonce" content="a77163f32ca0eb503093187035cc075dd2ae6909">
+    <meta name="html-safe-nonce" content="f06a52beccad8e484fb26cc31100c28b3f2c59d4">
 
   <meta http-equiv="x-pjax-version" content="c5cb4bc436ca319698db7d62ae6ccc7d">
   
@@ -258,7 +258,7 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=9eax6m3UKSnXHXV6y6tKKdTBCgezfDSYPhySlrnjxncBV7tQKPjNXP/tY8CW3Hhn/mf4PknNNzwGZwYxAKvoIQ=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=YyFPGAXDD1zlMQOUNi7iSSmmLvSTlzRRi1slAj7ZUnFPQAzOdC1BPHSoVSbT50ghZdPxGSFVDBEWBtF/dOrNOw=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -385,13 +385,13 @@
 
         <a href="/login?return_to=%2Fnevakee716%2FcwHtml5DiagramFilter"
           class="HeaderMenu-link no-underline mr-3"
-          data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="43c48267f14a6c4b5b7e517e568c8783fd5f45212bd3c8be6738301e9348680b"
+          data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="7c3fa09880fff1009ff2fe755d6b1c8b7ae1a7079db23998c7b2a2d4070c3ae5"
           data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">
           Sign&nbsp;in
         </a>
           <a href="/join?source_repo=nevakee716%2FcwHtml5DiagramFilter"
             class="HeaderMenu-link d-inline-block no-underline border border-gray-dark rounded-1 px-2 py-1"
-            data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="43c48267f14a6c4b5b7e517e568c8783fd5f45212bd3c8be6738301e9348680b"
+            data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="7c3fa09880fff1009ff2fe755d6b1c8b7ae1a7079db23998c7b2a2d4070c3ae5"
             data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">
             Sign&nbsp;up
           </a>
@@ -453,7 +453,7 @@
 
   <li>
     
-  <a class="tooltipped tooltipped-s btn btn-sm btn-with-count" aria-label="You must be signed in to watch a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="7b34b064f89e006b34f82c143cc7f24b924d9ce12c8d9bd8d36010bca3208969" href="/login?return_to=%2Fnevakee716%2FcwHtml5DiagramFilter">
+  <a class="tooltipped tooltipped-s btn btn-sm btn-with-count" aria-label="You must be signed in to watch a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="5803977cb4b103484f75c579add84f2bf0bd0c00eaf700592d20d7f8abfe9f87" href="/login?return_to=%2Fnevakee716%2FcwHtml5DiagramFilter">
     <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
     Watch
 </a>    <a class="social-count" href="/nevakee716/cwHtml5DiagramFilter/watchers"
@@ -464,7 +464,7 @@
   </li>
 
   <li>
-        <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to star a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;star button&quot;,&quot;repository_id&quot;:233839482,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="f492e06eeb8ec55656653e01afd308da8d5e2ddf39afd4148cffc333c6402fc4" href="/login?return_to=%2Fnevakee716%2FcwHtml5DiagramFilter">
+        <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to star a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;star button&quot;,&quot;repository_id&quot;:233839482,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="11ea2493aed77faa68eb88d3bb6538f809904442c4fca97fce30db448c1f7655" href="/login?return_to=%2Fnevakee716%2FcwHtml5DiagramFilter">
       <svg aria-label="star" height="16" class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" role="img"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
 
       Star
@@ -477,7 +477,7 @@
   </li>
 
   <li>
-      <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to fork a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;repo details fork button&quot;,&quot;repository_id&quot;:233839482,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="8fb9a713433c101e3ba252166e7ffdb8067cf2b0f596233337132b508f46ecc1" href="/login?return_to=%2Fnevakee716%2FcwHtml5DiagramFilter">
+      <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to fork a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;repo details fork button&quot;,&quot;repository_id&quot;:233839482,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="f5f530d07841df4e83e0eb7db3de62d1d716ef5171ac82ab1c9cbd9188b572fb" href="/login?return_to=%2Fnevakee716%2FcwHtml5DiagramFilter">
         <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
         Fork
 </a>
@@ -549,13 +549,13 @@
         <div class="signup-prompt-bg rounded-1">
       <div class="signup-prompt p-4 text-center mb-4 rounded-1">
         <div class="position-relative">
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/prompt_dismissals/signup" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="DaOb87/RaN+pfoeFa2Tx4n/xHSCDZymwoQ0u4Awdk65+gDcdE07tsjDzJTU9PSy6qHFr0OhSF0yLsZvKTVHt+g==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/prompt_dismissals/signup" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="SKLFSMl3qf8Ft0Vz6tF6R/n/3E+UJsICu8XYh4SSJ76PKkA1Hn2L+VUBlvftZohUf+5ir6KaE+rseWLfGUZuvA==" />
             <button type="submit" class="position-absolute top-0 right-0 btn-link link-gray" data-ga-click="(Logged out) Sign up prompt, clicked Dismiss, text:dismiss">
               Dismiss
             </button>
 </form>          <h3 class="pt-2">Join GitHub today</h3>
           <p class="col-6 mx-auto">GitHub is home to over 40 million developers working together to host and review code, manage projects, and build software together.</p>
-          <a class="btn btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;files signup prompt&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="657a53598776abbba88bb0893a3d430ed9a6ebbfb21d77ba84f1d62cd1320b5b" data-ga-click="(Logged out) Sign up prompt, clicked Sign up, text:sign-up" href="/join?source=prompt-code&amp;source_repo=nevakee716%2FcwHtml5DiagramFilter">Sign up</a>
+          <a class="btn btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;files signup prompt&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="f52178656759725daf38a754afca1aa95e0e77d5f903d80482ed2539043df311" data-ga-click="(Logged out) Sign up prompt, clicked Sign up, text:sign-up" href="/join?source=prompt-code&amp;source_repo=nevakee716%2FcwHtml5DiagramFilter">Sign up</a>
         </div>
       </div>
     </div>
@@ -577,7 +577,7 @@
         <a data-pjax href="/nevakee716/cwHtml5DiagramFilter/commits/master">
             <svg class="octicon octicon-history" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 13H6V6h5v2H8v5zM7 1C4.81 1 2.87 2.02 1.59 3.59L0 2v4h4L2.5 4.5C3.55 3.17 5.17 2.3 7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 011.3 8c0-.34.03-.67.09-1H.08C.03 7.33 0 7.66 0 8c0 3.86 3.14 7 7 7s7-3.14 7-7-3.14-7-7-7z"/></svg>
             <span class="num text-emphasized">
-              12
+              17
             </span>
             commits
         </a>
@@ -629,9 +629,9 @@
     <details class="details-reset">
       <summary title="Click for language details" data-ga-click="Repository, language bar stats toggle, location:repo overview">
         <div class="d-flex repository-lang-stats-graph">
-            <span class="language-color" aria-label="JavaScript 84.7%" style="width:84.7%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
-            <span class="language-color" aria-label="HTML 8.4%" style="width:8.4%; background-color:#e34c26;" itemprop="keywords">HTML</span>
-            <span class="language-color" aria-label="CSS 6.9%" style="width:6.9%; background-color:#563d7c;" itemprop="keywords">CSS</span>
+            <span class="language-color" aria-label="JavaScript 82.5%" style="width:82.5%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+            <span class="language-color" aria-label="CSS 9.0%" style="width:9.0%; background-color:#563d7c;" itemprop="keywords">CSS</span>
+            <span class="language-color" aria-label="HTML 8.5%" style="width:8.5%; background-color:#e34c26;" itemprop="keywords">HTML</span>
         </div>
       </summary>
       <div class="repository-lang-stats">
@@ -640,21 +640,21 @@
               <a href="/nevakee716/cwHtml5DiagramFilter/search?l=javascript"  data-ga-click="Repository, language stats search click, location:repo overview">
                 <span class="color-block language-color" style="background-color:#f1e05a;"></span>
                 <span class="lang">JavaScript</span>
-                <span class="percent">84.7%</span>
-              </a>
-          </li>
-          <li>
-              <a href="/nevakee716/cwHtml5DiagramFilter/search?l=html"  data-ga-click="Repository, language stats search click, location:repo overview">
-                <span class="color-block language-color" style="background-color:#e34c26;"></span>
-                <span class="lang">HTML</span>
-                <span class="percent">8.4%</span>
+                <span class="percent">82.5%</span>
               </a>
           </li>
           <li>
               <a href="/nevakee716/cwHtml5DiagramFilter/search?l=css"  data-ga-click="Repository, language stats search click, location:repo overview">
                 <span class="color-block language-color" style="background-color:#563d7c;"></span>
                 <span class="lang">CSS</span>
-                <span class="percent">6.9%</span>
+                <span class="percent">9.0%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/nevakee716/cwHtml5DiagramFilter/search?l=html"  data-ga-click="Repository, language stats search click, location:repo overview">
+                <span class="color-block language-color" style="background-color:#e34c26;"></span>
+                <span class="lang">HTML</span>
+                <span class="percent">8.5%</span>
               </a>
           </li>
         </ol>
@@ -694,7 +694,7 @@
 
   <div class="BtnGroup">
 
-    <a class="btn btn-sm empty-icon float-right BtnGroup-item" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:233839482,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="28041e8543f2f6a2e44465b0b0b561a8d2899c61a19305db0b38d5d22f2640d5" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="/nevakee716/cwHtml5DiagramFilter/find/master">Find file</a>
+    <a class="btn btn-sm empty-icon float-right BtnGroup-item" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:233839482,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="94fa1447bb0578b45e170b2b32e12980b777a76dddb5b7f40ea3ae58c43b63c7" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="/nevakee716/cwHtml5DiagramFilter/find/master">Find file</a>
   </div>
 
   
@@ -703,7 +703,7 @@
     
 
     <details class="get-repo-select-menu js-get-repo-select-menu js-anon-get-repo-select-menu position-relative details-overlay details-reset">
-  <summary class="btn btn-sm ml-2 btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;repository_id&quot;:233839482,&quot;target&quot;:&quot;CLONE_OR_DOWNLOAD_BUTTON&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="8b288e454864551bdd9e1832d70d3185bb81029906d899e083c5c3211615da94">
+  <summary class="btn btn-sm ml-2 btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;repository_id&quot;:233839482,&quot;target&quot;:&quot;CLONE_OR_DOWNLOAD_BUTTON&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="616235bd6a255dba3d7644e090a62b19d83a4a07cd162d82bf7302b9ac85c364">
     Clone or download
     <span class="dropdown-caret"></span>
 </summary>  <div class="position-relative">
@@ -725,7 +725,7 @@
             <div class="input-group">
   <input type="text" class="form-control input-monospace input-sm" data-autoselect value="https://github.com/nevakee716/cwHtml5DiagramFilter.git" aria-label="Clone this repository at https://github.com/nevakee716/cwHtml5DiagramFilter.git" readonly>
   <div class="input-group-button">
-    <clipboard-copy value="https://github.com/nevakee716/cwHtml5DiagramFilter.git" aria-label="Copy to clipboard" class="btn btn-sm" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;COPY_URL&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:233839482,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="5bd9ad9f58858454f36a47ba5225862b314dc5679a19ef387f1513f7d0e1c798"><svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></clipboard-copy>
+    <clipboard-copy value="https://github.com/nevakee716/cwHtml5DiagramFilter.git" aria-label="Copy to clipboard" class="btn btn-sm" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;COPY_URL&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:233839482,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="2bf7b7e660a69fcb8c15354521a165996d3035b4ccdfe2ed8aa989eff1e9f5d0"><svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></clipboard-copy>
   </div>
 </div>
 
@@ -733,7 +733,7 @@
 
         <div class="mt-2">
           
-<a class="btn btn-outline get-repo-btn js-anon-download-zip-link " rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;DOWNLOAD_ZIP&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:233839482,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="b13b50fe4a825766e2e51acc95a2bf815d0de9b79d89f8ae5f6137b5b02d3189" data-ga-click="Repository, download zip, location:repo overview" href="/nevakee716/cwHtml5DiagramFilter/archive/master.zip">Download ZIP</a>
+<a class="btn btn-outline get-repo-btn js-anon-download-zip-link " rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;DOWNLOAD_ZIP&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:233839482,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="2323c0f26834103729631e1ddde9fe01260079c7725252893803f4542f2e94dd" data-ga-click="Repository, download zip, location:repo overview" href="/nevakee716/cwHtml5DiagramFilter/archive/master.zip">Download ZIP</a>
 
         </div>
       </div>
@@ -747,8 +747,8 @@
             </p>
           </div>
           <div class="width-full d-flex">
-            <a rel="nofollow" class="get-repo-btn btn btn-outline" style="width: 50%" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;download popover&quot;,&quot;repository_id&quot;:233839482,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="959505ed4d9d8922a4aade51928bdeb4affee78b61fb372c885bedf70025c40c" href="/login?return_to=https%3A%2F%2Fgithub.com%2Fnevakee716%2FcwHtml5DiagramFilter">Sign in</a>
-            <a rel="nofollow" class="get-repo-btn btn btn-primary" style="width: 50%" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;download popover&quot;,&quot;repository_id&quot;:233839482,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;EF0E:9C0B:E6EE9E:157370F:5E2704FD&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="fab5c5d92fce1a159083c1522952db5b1e788d62c0a83d8cb309b82e2f5d133c" href="/join?branch=master&amp;source=download&amp;source_repo=nevakee716%2FcwHtml5DiagramFilter">Sign up</a>
+            <a rel="nofollow" class="get-repo-btn btn btn-outline" style="width: 50%" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;download popover&quot;,&quot;repository_id&quot;:233839482,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="2f2a27af61fd9091433b92e590b6052ee58cbcdab28897be8e6b9f7ad253f140" href="/login?return_to=https%3A%2F%2Fgithub.com%2Fnevakee716%2FcwHtml5DiagramFilter">Sign in</a>
+            <a rel="nofollow" class="get-repo-btn btn btn-primary" style="width: 50%" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;download popover&quot;,&quot;repository_id&quot;:233839482,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;F222:9C08:BEA46E:11AA9F7:5E27155C&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter&quot;,&quot;referrer&quot;:&quot;https://github.com/nevakee716/cwHtml5DiagramFilter/wiki&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="9268882bd89e34533083b70eedc768ab38cd666ab8a57e7fc848e4f44914c4da" href="/join?branch=master&amp;source=download&amp;source_repo=nevakee716%2FcwHtml5DiagramFilter">Sign up</a>
           </div>
         </div>
 
@@ -785,7 +785,7 @@
 
   
 
-<include-fragment src="/nevakee716/cwHtml5DiagramFilter/tree-commit/31487d7acb9dd52b9aa3131420149d732b39eacb" class="commit-tease commit-loader">
+<include-fragment src="/nevakee716/cwHtml5DiagramFilter/tree-commit/481d72034ee9ec36f6aafeedca5f76e46307af15" class="commit-tease commit-loader">
   <div class="blank loader-loading">
       <img alt="" class="loader" src="https://github.githubassets.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" height="16" />
       Fetching latest commit…
@@ -797,7 +797,7 @@
 
 
 <include-fragment class="file-wrap" src="/nevakee716/cwHtml5DiagramFilter/file-list/master">
-  <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/nevakee716/cwHtml5DiagramFilter/tree/31487d7acb9dd52b9aa3131420149d732b39eacb">Permalink</a>
+  <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/nevakee716/cwHtml5DiagramFilter/tree/481d72034ee9ec36f6aafeedca5f76e46307af15">Permalink</a>
 
   <table class="files js-navigation-container js-active-navigation-container" data-pjax>
     <thead>
@@ -822,7 +822,7 @@
             <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
           </td>
           <td class="content">
-            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="This path skips through empty directories" id="07d3e66d8091f9d8370d15033d7e16c0-2d4ae6485f99e4824bcba695f2e57a72581593cf" href="/nevakee716/cwHtml5DiagramFilter/tree/master/angularHTMLayout/cwHtml5DiagramFilter"><span class="simplified-path">angularHTMLayout/</span>cwHtml5DiagramFilter</a></span>
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="This path skips through empty directories" id="07d3e66d8091f9d8370d15033d7e16c0-01a1e27adcb1812147f08b6805ddf8fe8d7f430d" href="/nevakee716/cwHtml5DiagramFilter/tree/master/angularHTMLayout/cwHtml5DiagramFilter"><span class="simplified-path">angularHTMLayout/</span>cwHtml5DiagramFilter</a></span>
           </td>
           <td class="message">
             <span class="css-truncate css-truncate-target">
@@ -838,7 +838,39 @@
             <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
           </td>
           <td class="content">
-            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="src" id="25d902c24283ab8cfbac54dfa101ad31-c5b0e655773af062b9e7050fc457dcf4b5c1de1c" href="/nevakee716/cwHtml5DiagramFilter/tree/master/src">src</a></span>
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="dist" id="2a6d07eef8b10b84129b42424ed99327-1b745e764a1187ae9866587d4ebcb6bdfb93acad" href="/nevakee716/cwHtml5DiagramFilter/tree/master/dist">dist</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"/></svg>
+            <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="help" id="657f8b8da628ef83cf69101b6817150a-23aec638aa65f6c22ed122aa229ddf212c6bee99" href="/nevakee716/cwHtml5DiagramFilter/tree/master/help">help</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"/></svg>
+            <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="src" id="25d902c24283ab8cfbac54dfa101ad31-6475b1ea84649217dd39db2296e87aaf49dedc4f" href="/nevakee716/cwHtml5DiagramFilter/tree/master/src">src</a></span>
           </td>
           <td class="message">
             <span class="css-truncate css-truncate-target">
@@ -854,7 +886,7 @@
             <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
           </td>
           <td class="content">
-            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="package.json" id="b9cfc7f2cdf78a7f4b91a753d10865a2-caccfb8efc739e94d478c167345d80e98a401ba7" href="/nevakee716/cwHtml5DiagramFilter/blob/master/package.json">package.json</a></span>
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="package.json" id="b9cfc7f2cdf78a7f4b91a753d10865a2-dd19bf749ba015e55fdeb4b7337f2d976f03a89d" href="/nevakee716/cwHtml5DiagramFilter/blob/master/package.json">package.json</a></span>
           </td>
           <td class="message">
             <span class="css-truncate css-truncate-target">
