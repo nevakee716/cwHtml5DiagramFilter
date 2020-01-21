@@ -1,21 +1,21 @@
 {
-  "name": "Html5DiagramHighlight",
-  "version": "1.5.8",
-  "description": "Allow you to hightlight object on diagram depending on their category or association region",
-  "main": "src/Html5DiagramHighlight.js",
+  "name": "Html5DiagramFilter",
+  "version": "1.0..",
+  "description": "Allow you to display region depending on filtered associated objects",
+  "main": "src/cwHtml5DiagramFilter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nevakee716/cwHtml5DiagramHighlight.git"
+    "url": "git+https://github.com/nevakee716/cwHtml5DiagramFilter.git"
   },
   "author": "Mathias Pfauwadel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nevakee716/cwHtml5DiagramHighlight/issues"
+    "url": "https://github.com/nevakee716/cwHtml5DiagramFilter/issues"
   },
-  "homepage": "https://github.com/nevakee716/cwHtml5DiagramHighlight/wiki",
-  "wiki": "https://github.com/nevakee716/cwHtml5DiagramHighlight/wiki",
-  "evolve-version": "4.0 - 4.2"
+  "homepage": "https://github.com/nevakee716/cwHtml5DiagramFilter/wiki",
+  "wiki": "https://github.com/nevakee716/cwHtml5DiagramFilter/wiki",
+  "evolve-version": "4.2 - 4.5"
 }
