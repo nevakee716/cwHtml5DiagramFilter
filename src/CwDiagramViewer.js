@@ -25,7 +25,7 @@
           // Navigation
           this.openDiagrams(regionZone.navigationDiagrams);
         } else if (regionZone.RegionTypeString === "MultiplePropertyAssociations") {
-          console.table(regionZone.filteredObjects);
+          console.log(regionZone.filteredObjects);
         } else if (regionZone.Clickable === true) {
           // Clickable regions
           if (!cwApi.isUndefined(regionZone) && regionZone.ClickableRegionUrl !== "") {
