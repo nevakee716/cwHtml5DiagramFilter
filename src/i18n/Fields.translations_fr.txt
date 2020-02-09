@@ -2,3 +2,4 @@
 label_pt_filter_column_operator = Opérateur
 label_pt_filter_column_value = Valeur
 label_pt_filter_add_new = Ajouter Filtre
+diagram_selectAObjectToView = Selectionner un objet
