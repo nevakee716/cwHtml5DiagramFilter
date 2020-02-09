@@ -88,13 +88,19 @@
       var miniO = [],
         $li;
       miniO.push("<li>");
-      miniO.push("<div>", obj.name, "</div>", "</li>");
-      $li = $(miniO.join(""));
-      if (popoutExist) {
-        $li.click(function() {
-          cwAPI.cwDiagramPopoutHelper.openDiagramPopout(obj, popOutName);
-        });
+      if (cwAPI.customLibs && cwAPI.customLibs.utils && cwAPI.customLibs.utils.getCustomDisplayString) {
+        miniO.push(cwAPI.customLibs.utils.getCustomDisplayString("", obj));
+        $li = $(miniO.join(""));
+      } else {
+        miniO.push("<div>", obj.name, "</div>", "</li>");
+        $li = $(miniO.join(""));
+        if (popoutExist) {
+          $li.click(function() {
+            cwAPI.cwDiagramPopoutHelper.openDiagramPopout(obj, popOutName);
+          });
+        }
       }
+
       $ul.append($li);
     }
 
