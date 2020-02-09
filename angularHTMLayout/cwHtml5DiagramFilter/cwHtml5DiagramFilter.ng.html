@@ -12,21 +12,26 @@
             <th colspan="3">{{paletteEntry.PaletteEntryDisplayName}}</th>
           </tr>
         </thead>
+        <thead ng-if="getObjectType(objectTypeScriptName).name === paletteEntry.PaletteEntryDisplayName" class="compareTable-header">
+          <tr>
+            <th colspan="3">Others Categories</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr ng-if="region.RegionType == 2 ||region.RegionType == 3 || region.RegionType == 4 || region.RegionType == 18" ng-repeat-start="region in paletteEntry.Regions">
-            <td class="buttonTd" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence].enable = !configuration[objectTypeScriptName].regions[region.RegionSequence].enable">
-              <i class="fa fa-eye {{configuration[objectTypeScriptName].regions[region.RegionSequence].enable? 'active' : ''}}" aria-hidden="true"></i>
+          <tr ng-if="isRegionTypeToDisplay(region)" ng-repeat-start="region in paletteEntry.Regions">
+            <td class="buttonTd" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].enable = !configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].enable">
+              <i class="fa fa-eye {{configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].enable? 'active' : ''}}" aria-hidden="true"></i>
             </td>
-            <td class="buttonTd" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence].calc = !configuration[objectTypeScriptName].regions[region.RegionSequence].calc">
-              <i ng-if="region.RegionType == 18" class="fa fa-calculator {{configuration[objectTypeScriptName].regions[region.RegionSequence].calc? 'active' : ''}}" aria-hidden="true"></i>
+            <td class="buttonTd" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].calc = !configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].calc">
+              <i ng-if="region.RegionType == 18" class="fa fa-calculator {{configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].calc? 'active' : ''}}" aria-hidden="true"></i>
             </td>
             <td class="filterableRegion" ng-if="region.RegionType == 2">
               {{region.RegionTypeString}} {{getObjectType(region.RegionData.TargetObjectTypeScriptName).name}}
             </td>
-            <td ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence].expended = !configuration[objectTypeScriptName].regions[region.RegionSequence].expended" class="filterableRegion" ng-if="region.RegionType == 18">
+            <td ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].expended = !configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].expended" class="filterableRegion" ng-if="region.RegionType == 18">
               {{region.RegionTypeString}} {{getObjectType(region.RegionData.TargetObjectTypeScriptName).name}}
-              <i ng-if="configuration[objectTypeScriptName].regions[region.RegionSequence].expended" class="fa fa-angle-up" aria-hidden="true"></i>
-              <i ng-if="configuration[objectTypeScriptName].regions[region.RegionSequence].expended !== true" class="fa fa-angle-down" aria-hidden="true"></i>
+              <i ng-if="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].expended" class="fa fa-angle-up" aria-hidden="true"></i>
+              <i ng-if="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].expended !== true" class="fa fa-angle-down" aria-hidden="true"></i>
             </td>
             <td ng-if="region.RegionType == 3 || region.RegionType == 4">
               {{getPropertyType(paletteEntry.PaletteObjectTypeScriptName,region.SourcePropertyTypeScriptName).name}}
@@ -34,14 +39,14 @@
           </tr>
           <tr class="regionFilter" ng-repeat-end ng-if="region.RegionType == 18">
             <td colspan="3">
-              <div class="{{configuration[objectTypeScriptName].regions[region.RegionSequence].expended ? '' : 'minimised'}}">
+              <div class="{{configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].expended ? '' : 'minimised'}}">
                 <table class="filter-wrapper">
                   <tr class="filter-row bootstrap-iso">
                     <td class="filter-cell filter-content header-cell header-property">{{$root.i18n('label_pt_filter_column_property')}}</td>
                     <td class="filter-cell filter-operator header-cell header-operator">{{$root.i18n('label_pt_filter_column_operator')}}</td>
                     <td class="filter-cell filter-value header-cell header-value">{{$root.i18n('label_pt_filter_column_value')}}</td>
                   </tr>
-                  <tr class="filter-row filter-content filter-cell" ng-repeat="f in configuration[objectTypeScriptName].regions[region.RegionSequence].filters">
+                  <tr class="filter-row filter-content filter-cell" ng-repeat="f in configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].filters">
                     <td class="filter-property-scriptname filter-cell">
                       <select ng-model="f.scriptname" ng-change="processFilter(f)">
                         <option ng-selected="x.PropertyTypeScriptName === f.scriptname" value="{{x.PropertyTypeScriptName}}" ng-repeat="x in region.RegionData.PropertiesSection">{{getPropertyType(x.ObjectTypeScriptName,x.PropertyTypeScriptName).name}} </option>
@@ -59,12 +64,12 @@
                       <select ng-model="f.Value" ng-if="getPropertyDataType(region.RegionData.TargetObjectTypeScriptName, f.scriptname)==='lookup' && f.Operator != 'In'" ng-options="x.id as x.name for x in getPropertyType(region.RegionData.TargetObjectTypeScriptName,f.scriptname).lookups"></select>
                     </td>
                     <td class="filter-cell">
-                      <a class="btn page-action no-text" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence].filters.splice($index,1)"><i class="fa fa-times" aria-hidden="true"></i></a>
+                      <a class="btn page-action no-text" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].filters.splice($index,1)"><i class="fa fa-times" aria-hidden="true"></i></a>
                     </td>
                   </tr>
                   <tr>
                     <td class="add-filter-button bootstrap-iso">
-                      <a class="btn-add-filter btn page-action" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence].filters.push({})">{{$root.i18n('label_pt_filter_add_new')}}</a>
+                      <a class="btn-add-filter btn page-action" ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].filters.push({})">{{$root.i18n('label_pt_filter_add_new')}}</a>
                     </td>
                   </tr>
                 </table>

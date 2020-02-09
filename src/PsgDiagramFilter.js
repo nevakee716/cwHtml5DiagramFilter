@@ -6,7 +6,6 @@
   var PsgDiagramFilter;
 
   var bannedObjectTypeScriptName = ["EVENRESULT", "PROCESSBREAK", "CONNECTORSET", "FREETEXTOBJECT", "CONNECTOR"];
-  var regionToDisplay = [2, 3, 4, 18];
 
   PsgDiagramFilter = function(diagramViewer) {
     function hex(x) {
@@ -186,9 +185,10 @@
     }
     let config = this.configuration[shape.shape.cwObject.objectTypeScriptName.toUpperCase()];
     if (config === undefined || config.empty) return 1;
-    config = config.regions[region.RegionSequence];
+    config = config.regions[region.RegionSequence + "_" + shape.paletteEntry.PaletteObjectTypeCategory];
     if (config === undefined) return 1;
     if (config.enable === false) return 0;
+    if (region.RegionTypeString === "Association") region.filteredObjects = shape.shape.cwObject.associations[region.RegionData.Key];
     if (region.RegionTypeString !== "MultiplePropertyAssociations") return 1;
     let objects = shape.shape.cwObject.associations[region.RegionData.Key];
     let filteredObjects = this.filtersObjects(objects, config.filters);
@@ -202,7 +202,26 @@
   };
 
   PsgDiagramFilter.prototype.isRegionTypeToDisplay = function(region) {
-    return regionToDisplay.indexOf(region.RegionType) !== -1;
+    switch (region.RegionTypeString) {
+      case "LocalPropertyActualValue":
+      case "MultipleProperties":
+        return region.SourcePropertyTypeScriptName !== "name" && region.SourcePropertyTypeScriptName !== "label";
+      case "MultiplePropertyAssociations":
+      case "Association":
+        return true;
+      case "Label":
+      case "Explosion":
+      case "ExplosionWithRuleOnly":
+      case "Navigation":
+      case "ExplosionWithRuleAndReferenceProperty":
+      case "PropertiesAsDateRange":
+      case "VisualizationUsingPaletteValue":
+      case "GaugeUsingPaletteValue":
+      case "GaugeUsingReferenceProperty":
+      case "VisualizationUsingReferenceProperty":
+      default:
+        return false;
+    }
   };
 
   PsgDiagramFilter.prototype.getConfiguration = function() {
@@ -210,22 +229,26 @@
     let paletteEntrySortByObjectType = {};
     Object.keys(this.diagramViewer.objectTypesStyles).forEach(function(key) {
       let paletteEntry = self.diagramViewer.objectTypesStyles[key];
+      let s = key.split("|");
       let objectTypeScriptName = key.split("|")[0];
+      let typeId = key.split("|")[1];
       if (paletteEntrySortByObjectType[objectTypeScriptName] === undefined) paletteEntrySortByObjectType[objectTypeScriptName] = [];
+      paletteEntry.typeId = typeId;
       paletteEntrySortByObjectType[objectTypeScriptName].push(paletteEntry);
       if (self.configuration[objectTypeScriptName] === undefined) {
         self.configuration[objectTypeScriptName] = {};
         self.configuration[objectTypeScriptName].expended = true;
         self.configuration[objectTypeScriptName].regions = {};
+        self.configuration[objectTypeScriptName].empty = true;
       }
-      self.configuration[objectTypeScriptName].empty = true;
+
       paletteEntry.Regions.forEach(function(r) {
         if (self.isRegionTypeToDisplay(r)) self.configuration[objectTypeScriptName].empty = false;
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence] = {};
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence].expended = false;
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence].enable = true;
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence].calc = false;
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence].filters = [];
+        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId] = {};
+        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].expended = false;
+        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].enable = true;
+        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].calc = false;
+        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].filters = [];
       });
     });
 
@@ -247,6 +270,8 @@
         $scope.getObjectType = cwApi.mm.getObjectType;
         $scope.getPropertyType = cwApi.mm.getProperty;
         $scope.isRegionToDisplay = self.isRegionToDisplay;
+        $scope.isRegionTypeToDisplay = self.isRegionTypeToDisplay;
+
         $scope.configuration = self.configuration;
         $scope.isObjectTypeToDisplay = function(objectTypeScriptName) {
           return bannedObjectTypeScriptName.indexOf(objectTypeScriptName) === -1 && self.configuration[objectTypeScriptName].empty !== true;
