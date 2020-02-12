@@ -7,12 +7,12 @@
     </div>
     <div class="{{configuration[objectTypeScriptName].expended ? '' : 'minimised'}}">
       <table ng-if="paletteEntry.Regions.length > 0" class="cw-grid" ng-repeat="paletteEntry in paletteEntries">
-        <thead ng-if="getObjectType(objectTypeScriptName).name !== paletteEntry.PaletteEntryDisplayName" class="compareTable-header">
+        <thead ng-if="getObjectType(objectTypeScriptName).name !== paletteEntry.PaletteEntryDisplayName && configuration[objectTypeScriptName].paletteEntries[paletteEntry.typeId].displayHeader" class="compareTable-header">
           <tr>
             <th colspan="3">{{paletteEntry.PaletteEntryDisplayName}}</th>
           </tr>
         </thead>
-        <thead ng-if="getObjectType(objectTypeScriptName).name === paletteEntry.PaletteEntryDisplayName" class="compareTable-header">
+        <thead ng-if="getObjectType(objectTypeScriptName).name === paletteEntry.PaletteEntryDisplayName && configuration[objectTypeScriptName].paletteEntries[paletteEntry.typeId].displayHeader" class="compareTable-header">
           <tr>
             <th colspan="3">Others Categories</th>
           </tr>
@@ -26,10 +26,10 @@
               <i ng-if="region.RegionType == 18" class="fa fa-calculator {{configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].calc? 'active' : ''}}" aria-hidden="true"></i>
             </td>
             <td class="filterableRegion" ng-if="region.RegionType == 2">
-              {{region.RegionTypeString}} {{getObjectType(region.RegionData.TargetObjectTypeScriptName).name}}
+              Associated {{getObjectType(region.RegionData.TargetObjectTypeScriptName).name}}
             </td>
             <td ng-click="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].expended = !configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].expended" class="filterableRegion" ng-if="region.RegionType == 18">
-              {{region.RegionTypeString}} {{getObjectType(region.RegionData.TargetObjectTypeScriptName).name}}
+              Associated {{getObjectType(region.RegionData.TargetObjectTypeScriptName).name}}
               <i ng-if="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].expended" class="fa fa-angle-up" aria-hidden="true"></i>
               <i ng-if="configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].expended !== true" class="fa fa-angle-down" aria-hidden="true"></i>
             </td>

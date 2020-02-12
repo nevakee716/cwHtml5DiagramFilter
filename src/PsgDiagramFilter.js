@@ -5,7 +5,7 @@
 
   var PsgDiagramFilter;
 
-  var bannedObjectTypeScriptName = ["EVENRESULT", "PROCESSBREAK", "CONNECTORSET", "FREETEXTOBJECT", "CONNECTOR"];
+  var bannedObjectTypeScriptName = ["EVENTRESULT", "PROCESSBREAK", "CONNECTORSET", "FREETEXTOBJECT", "CONNECTOR"];
 
   PsgDiagramFilter = function(diagramViewer) {
     function hex(x) {
@@ -16,12 +16,12 @@
       return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
     }
     this.configuration = {};
-    this.globalAlpha = 0.2;
+    this.globalAlpha = 0;
     this.title1 = "Filter";
     this.title2 = diagramViewer.json.properties.type;
     this.regionsByObjectType = {};
     this.diagramViewer = diagramViewer;
-    this.template = this.diagramViewer.json.properties.type;
+    this.templateID = this.diagramViewer.json.properties.type_id;
     var v = cwAPI.getCurrentView();
 
     // get the saved configuration
@@ -104,6 +104,7 @@
 
     this.setupTemplate(diagramViewer);
     cwApi.CwPopout.onClose(function() {
+      localStorage.setItem("HTML5DiagramFilter_" + that.templateID, JSON.stringify(that.configuration));
       //that.setupSearchParameters(false);
     });
   };
@@ -205,7 +206,7 @@
     switch (region.RegionTypeString) {
       case "LocalPropertyActualValue":
       case "MultipleProperties":
-        return region.SourcePropertyTypeScriptName !== "name" && region.SourcePropertyTypeScriptName !== "label";
+        return false && region.SourcePropertyTypeScriptName !== "name" && region.SourcePropertyTypeScriptName !== "label";
       case "MultiplePropertyAssociations":
       case "Association":
         return true;
@@ -227,6 +228,15 @@
   PsgDiagramFilter.prototype.getConfiguration = function() {
     var self = this;
     let paletteEntrySortByObjectType = {};
+
+    let savedConfiguration = localStorage.getItem("HTML5DiagramFilter_" + this.templateID);
+    if (savedConfiguration) {
+      try {
+        savedConfiguration = JSON.parse(savedConfiguration);
+      } catch (e) {
+        savedConfiguration = {};
+      }
+    }
     Object.keys(this.diagramViewer.objectTypesStyles).forEach(function(key) {
       let paletteEntry = self.diagramViewer.objectTypesStyles[key];
       let s = key.split("|");
@@ -235,20 +245,31 @@
       if (paletteEntrySortByObjectType[objectTypeScriptName] === undefined) paletteEntrySortByObjectType[objectTypeScriptName] = [];
       paletteEntry.typeId = typeId;
       paletteEntrySortByObjectType[objectTypeScriptName].push(paletteEntry);
-      if (self.configuration[objectTypeScriptName] === undefined) {
+      if (savedConfiguration && savedConfiguration[objectTypeScriptName] !== undefined) {
+        self.configuration[objectTypeScriptName] = savedConfiguration[objectTypeScriptName];
+      } else if (self.configuration[objectTypeScriptName] === undefined) {
         self.configuration[objectTypeScriptName] = {};
         self.configuration[objectTypeScriptName].expended = true;
         self.configuration[objectTypeScriptName].regions = {};
         self.configuration[objectTypeScriptName].empty = true;
+        self.configuration[objectTypeScriptName].paletteEntries = {};
       }
-
+      self.configuration[objectTypeScriptName].paletteEntries[typeId] = {};
+      self.configuration[objectTypeScriptName].paletteEntries[typeId].displayHeader = false;
       paletteEntry.Regions.forEach(function(r) {
-        if (self.isRegionTypeToDisplay(r)) self.configuration[objectTypeScriptName].empty = false;
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId] = {};
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].expended = false;
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].enable = true;
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].calc = false;
-        self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].filters = [];
+        if (self.isRegionTypeToDisplay(r)) {
+          self.configuration[objectTypeScriptName].empty = false;
+          self.configuration[objectTypeScriptName].paletteEntries[typeId].displayHeader = true;
+          if (savedConfiguration && savedConfiguration[objectTypeScriptName] && savedConfiguration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId] !== undefined) {
+            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId] = savedConfiguration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId];
+          } else {
+            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId] = {};
+            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].expended = false;
+            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].enable = true;
+            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].calc = false;
+            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].filters = [];
+          }
+        }
       });
     });
 
