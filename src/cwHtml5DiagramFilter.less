@@ -2,6 +2,10 @@
 @import "../../_mixins";
 
 .cw-diagram-filter-container {
+  table.cw-grid tr:not(:first-child):hover {
+    background-color: inherit;
+  }
+
   .cw-grid {
     transition: height 1s ease;
   }
@@ -141,5 +145,11 @@
       margin: 5px;
       color: @cwHomePageFavoriteTextColor;
     }
+  }
+}
+
+.btn.btn-diagram-filter.enable {
+  i.fa {
+    color: @cwAccentColor;
   }
 }

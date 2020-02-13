@@ -73,11 +73,13 @@
       o,
       that = this;
     filterButton = diagramViewer.$breadcrumb.find("a#cw-diagram-filter");
+    var filterClass = "";
+    if (this.filterEnable === true) filterClass = "enable";
     if (filterButton.length > 0) {
       filterButton.unbind("click");
     } else {
       o = [];
-      o.push('<a id="cw-diagram-filter" class="btn btn-diagram-filter no-text" title="', $.i18n.prop("DiagramSearchSearchIcon"), '"><span class="btn-text"></span><i class="fa fa-filter"></i></a>');
+      o.push('<a id="cw-diagram-filter" class="btn btn-diagram-filter no-text ', filterClass, '" title="', $.i18n.prop("DiagramFilterIcon"), '"><span class="btn-text"></span><i class="fa fa-filter"></i></a>');
       diagramViewer.$breadcrumb.find(".cwDiagramBreadcrumbZoneRight").append(o.join(""));
       filterButton = diagramViewer.$breadcrumb.find(".btn-diagram-filter");
     }
@@ -85,6 +87,20 @@
     filterButton.on("click", function() {
       that.setupDiagramFilterZone(diagramViewer);
     });
+  };
+
+  PsgDiagramFilter.prototype.updateFilterEnableStatus = function() {
+    var self = this;
+    self.filterEnable = false;
+    Object.keys(self.configuration).forEach(function(objectTypeScriptName) {
+      let config = self.configuration[objectTypeScriptName];
+      Object.keys(config.regions).forEach(function(regionKey) {
+        let configRegion = config.regions[regionKey];
+        self.filterEnable = self.filterEnable || configRegion.enable === false || configRegion.calc === true || configRegion.filters.length > 0;
+      });
+    });
+    if (self.filterEnable) $("#cw-diagram-filter").addClass("enable");
+    else $("#cw-diagram-filter").removeClass("enable");
   };
 
   PsgDiagramFilter.prototype.setupDiagramFilterZone = function(diagramViewer) {
@@ -227,6 +243,7 @@
 
   PsgDiagramFilter.prototype.getConfiguration = function() {
     var self = this;
+    this.filterEnable = false;
     let paletteEntrySortByObjectType = {};
 
     let savedConfiguration = localStorage.getItem("HTML5DiagramFilter_" + this.templateID);
@@ -245,14 +262,16 @@
       if (paletteEntrySortByObjectType[objectTypeScriptName] === undefined) paletteEntrySortByObjectType[objectTypeScriptName] = [];
       paletteEntry.typeId = typeId;
       paletteEntrySortByObjectType[objectTypeScriptName].push(paletteEntry);
-      if (savedConfiguration && savedConfiguration[objectTypeScriptName] !== undefined) {
-        self.configuration[objectTypeScriptName] = savedConfiguration[objectTypeScriptName];
-      } else if (self.configuration[objectTypeScriptName] === undefined) {
+
+      if (self.configuration[objectTypeScriptName] === undefined) {
         self.configuration[objectTypeScriptName] = {};
         self.configuration[objectTypeScriptName].expended = true;
         self.configuration[objectTypeScriptName].regions = {};
         self.configuration[objectTypeScriptName].empty = true;
         self.configuration[objectTypeScriptName].paletteEntries = {};
+        if (savedConfiguration && savedConfiguration[objectTypeScriptName] !== undefined) {
+          self.configuration[objectTypeScriptName].expended = savedConfiguration[objectTypeScriptName].expended;
+        }
       }
       self.configuration[objectTypeScriptName].paletteEntries[typeId] = {};
       self.configuration[objectTypeScriptName].paletteEntries[typeId].displayHeader = false;
@@ -260,19 +279,21 @@
         if (self.isRegionTypeToDisplay(r)) {
           self.configuration[objectTypeScriptName].empty = false;
           self.configuration[objectTypeScriptName].paletteEntries[typeId].displayHeader = true;
+          var configRegion;
           if (savedConfiguration && savedConfiguration[objectTypeScriptName] && savedConfiguration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId] !== undefined) {
-            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId] = savedConfiguration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId];
+            configRegion = savedConfiguration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId];
           } else {
-            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId] = {};
-            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].expended = false;
-            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].enable = true;
-            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].calc = false;
-            self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId].filters = [];
+            configRegion = {};
+            configRegion.expended = false;
+            configRegion.enable = true;
+            configRegion.calc = false;
+            configRegion.filters = [];
           }
+          self.configuration[objectTypeScriptName].regions[r.RegionSequence + "_" + typeId] = configRegion;
         }
       });
     });
-
+    self.updateFilterEnableStatus();
     return paletteEntrySortByObjectType;
   };
 
@@ -292,6 +313,7 @@
         $scope.getPropertyType = cwApi.mm.getProperty;
         $scope.isRegionToDisplay = self.isRegionToDisplay;
         $scope.isRegionTypeToDisplay = self.isRegionTypeToDisplay;
+        $scope.updateFilterEnableStatus = self.updateFilterEnableStatus;
 
         $scope.configuration = self.configuration;
         $scope.isObjectTypeToDisplay = function(objectTypeScriptName) {
@@ -299,12 +321,30 @@
         };
 
         $scope.paletteEntrySortByObjectType = self.paletteEntrySortByObjectType;
+
+        $scope.updateCalc = function(objectTypeScriptName, region, paletteEntry) {
+          self.configuration[objectTypeScriptName].regions[region.RegionSequence + "_" + paletteEntry.typeId].calc = !self.configuration[objectTypeScriptName].regions[region.RegionSequence + "_" + paletteEntry.typeId].calc;
+          self.updateFilterEnableStatus();
+        };
+
+        $scope.updateEnable = function(objectTypeScriptName, region, paletteEntry) {
+          self.configuration[objectTypeScriptName].regions[region.RegionSequence + "_" + paletteEntry.typeId].enable = !self.configuration[objectTypeScriptName].regions[region.RegionSequence + "_" + paletteEntry.typeId].enable;
+          self.updateFilterEnableStatus();
+        };
+
         $scope.FilterOperators = ["=", "!=", ">", "<"];
 
         $scope.processFilter = function(filter) {
           delete filter.Value;
           delete filter.Operator;
+          self.updateFilterEnableStatus();
         };
+
+        $scope.deleteFilter = function(objectTypeScriptName, region, paletteEntry, $index) {
+          self.configuration[objectTypeScriptName].regions[region.RegionSequence + "_" + paletteEntry.typeId].filters.splice($index, 1);
+          self.updateFilterEnableStatus();
+        };
+
         $scope.getFilterOperator = function(objectTypeScriptName, scriptname) {
           let type = $scope.getPropertyDataType(objectTypeScriptName, scriptname);
           switch (type) {
