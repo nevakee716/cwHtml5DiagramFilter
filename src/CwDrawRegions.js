@@ -704,8 +704,8 @@
       var undefinedCase = sourcePropertyTypeValue === 0 && propertyValues.referencePropertyTypeValue === null;
       var displayText = propertyValues.displayText;
       var isThereAssoc = propertyValues.listAssoc !== undefined && propertyValues.listAssoc !== null;
-      var isArrayEmpty = isThereAssoc && (Array.isArray(propertyValues.listAssoc) && propertyValues.listAssoc.length <= 0);
-      var isPropertyName = isThereAssoc && (!Array.isArray(propertyValues.listAssoc) && propertyValues.listAssoc.length > 0);
+      var isArrayEmpty = isThereAssoc && Array.isArray(propertyValues.listAssoc) && propertyValues.listAssoc.length <= 0;
+      var isPropertyName = isThereAssoc && !Array.isArray(propertyValues.listAssoc) && propertyValues.listAssoc.length > 0;
 
       this.precedence = 0;
 
