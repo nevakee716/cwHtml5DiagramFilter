@@ -1,6 +1,6 @@
 {
   "name": "Html5DiagramFilter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Allow you to display region depending on filtered associated objects",
   "main": "src/cwHtml5DiagramFilter.js",
   "scripts": {
