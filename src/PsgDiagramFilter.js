@@ -101,6 +101,8 @@
     });
     if (self.filterEnable) $("#cw-diagram-filter").addClass("enable");
     else $("#cw-diagram-filter").removeClass("enable");
+
+    localStorage.setItem("HTML5DiagramFilter_" + self.templateID, JSON.stringify(self.configuration));
   };
 
   PsgDiagramFilter.prototype.setupDiagramFilterZone = function(diagramViewer) {
