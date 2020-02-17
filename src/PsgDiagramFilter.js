@@ -164,7 +164,7 @@
           objPropertyValue = new Date(object.properties[propertyScriptname]);
           objPropertyValue = objPropertyValue.getTime();
           let d = filter.Value;
-          if (d.indexOf("{@currentDate}") !== -1) {
+          if (d.indexOf && d.indexOf("{@currentDate}") !== -1) {
             d = d.split("-");
             let dateOffset = 24 * 60 * 60 * 1000 * parseInt(d[1]);
             let today = new Date();
@@ -213,7 +213,11 @@
     let filteredObjects = this.filtersObjects(objects, config.filters);
     region.filteredObjects = filteredObjects;
     if (filteredObjects.length > 0) {
-      if (config.calc === true) region.TextandCoordinates.texts[0].text = filteredObjects.length + " ";
+      if (config.calc === true) {
+        if (region.TextandCoordinates.texts === undefined) region.TextandCoordinates.texts = [];
+        if (region.TextandCoordinates.texts.length === 0) region.TextandCoordinates.texts.push({});
+        region.TextandCoordinates.texts[0].text = filteredObjects.length + " ";
+      }
       return 1;
     } else {
       return this.globalAlpha;
@@ -334,6 +338,9 @@
           self.updateFilterEnableStatus();
         };
 
+        $scope.parseDate = function(filter) {
+          filter.Value = new Date(filter.Value);
+        };
         $scope.FilterOperators = ["=", "!=", ">", "<"];
 
         $scope.processFilter = function(filter) {

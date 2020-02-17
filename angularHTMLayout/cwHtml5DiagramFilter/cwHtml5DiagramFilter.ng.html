@@ -59,7 +59,7 @@
                     <td ng-if="f.scriptname" class="filter-value filter-cell">
                       <input class="largeCell" ng-model="f.Value" ng-if="getPropertyDataType(region.RegionData.TargetObjectTypeScriptName, f.scriptname)==='text'" />
                       <input ng-model="f.Value" type="checkbox" ng-if="getPropertyDataType(region.RegionData.TargetObjectTypeScriptName, f.scriptname)==='checkbox'" />
-                      <input ng-model="f.Value" ng-if="getPropertyDataType(region.RegionData.TargetObjectTypeScriptName, f.scriptname)==='date'" />
+                      <input ng-init="parseDate(f)" ng-model="f.Value" type="date" ng-if="getPropertyDataType(region.RegionData.TargetObjectTypeScriptName, f.scriptname)==='date'" />
                       <input ng-model="f.Value" type="number" ng-if="getPropertyDataType(region.RegionData.TargetObjectTypeScriptName, f.scriptname)==='number'" />
                       <select ng-model="f.Value" ng-if="getPropertyDataType(region.RegionData.TargetObjectTypeScriptName, f.scriptname)==='lookup' && f.Operator != 'In'" ng-options="x.id as x.name for x in getPropertyType(region.RegionData.TargetObjectTypeScriptName,f.scriptname).lookups"></select>
                     </td>
