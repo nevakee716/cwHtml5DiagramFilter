@@ -216,11 +216,30 @@
       if (config.calc === true) {
         if (region.TextandCoordinates.texts === undefined) region.TextandCoordinates.texts = [];
         if (region.TextandCoordinates.texts.length === 0) region.TextandCoordinates.texts.push({});
-        region.TextandCoordinates.texts[0].text = filteredObjects.length + " ";
+        region.TextandCoordinates.texts[0].text = " ";
       }
       return 1;
     } else {
       return this.globalAlpha;
+    }
+  };
+
+  PsgDiagramFilter.prototype.drawNumberOfAssociation = function(shape, region) {
+    if (region.RegionTypeString !== "MultiplePropertyAssociations" && region.RegionTypeString !== "Association") return 1;
+    if (region.filteredObjects.length > 0) {
+      let config = this.configuration[shape.shape.cwObject.objectTypeScriptName.toUpperCase()];
+      config = config.regions[region.RegionSequence + "_" + shape.paletteEntry.PaletteObjectTypeCategory];
+      if (config.calc === true) {
+        let ctx = this.diagramViewer.ctx;
+        let oldTextAlign = ctx.textAlign;
+        let oldTextBaseline = ctx.textBaseline;
+        cwApi.Diagrams.CwDiagramShape.setFontInContext(ctx, region.RegionResultReadyToDisplay.style);
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(region.filteredObjects.length, region.X + region.W / 2, region.Y + region.H / 2);
+        ctx.textAlign = oldTextAlign;
+        ctx.textBaseline = oldTextBaseline;
+      }
     }
   };
 

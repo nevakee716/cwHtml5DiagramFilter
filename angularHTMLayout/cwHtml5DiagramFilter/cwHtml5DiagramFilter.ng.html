@@ -23,7 +23,7 @@
               <i class="fa fa-eye {{configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].enable? 'active' : ''}}" aria-hidden="true"></i>
             </td>
             <td class="buttonTd" ng-click="updateCalc(objectTypeScriptName,region,paletteEntry)">
-              <i ng-if="region.RegionType == 18" class="fa fa-calculator {{configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].calc? 'active' : ''}}" aria-hidden="true"></i>
+              <i class="fa fa-calculator {{configuration[objectTypeScriptName].regions[region.RegionSequence + '_' + paletteEntry.typeId].calc? 'active' : ''}}" aria-hidden="true"></i>
             </td>
             <td class="filterableRegion" ng-if="region.RegionType == 2">
               Associated {{getObjectType(region.RegionData.TargetObjectTypeScriptName).name}}

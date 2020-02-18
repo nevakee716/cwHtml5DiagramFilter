@@ -21,6 +21,7 @@
 
   PsgDiagramFilterManager.prototype.resetGlobalAlpha = function(diagramShape, shape, region) {
     if (this.PsgDiagramFilter.hasOwnProperty(diagramShape.diagramCanvas.id)) {
+      this.PsgDiagramFilter[diagramShape.diagramCanvas.id].drawNumberOfAssociation(diagramShape, region);
       this.PsgDiagramFilter[diagramShape.diagramCanvas.id].resetGlobalAlpha(diagramShape, region);
     }
   };
