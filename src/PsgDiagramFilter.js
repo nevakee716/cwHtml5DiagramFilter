@@ -232,6 +232,7 @@
       config = config.regions[region.RegionSequence + "_" + shape.paletteEntry.PaletteObjectTypeCategory];
       if (config.calc === true) {
         let ctx = this.diagramViewer.ctx;
+        ctx.save();
         let oldTextAlign = ctx.textAlign;
         let oldTextBaseline = ctx.textBaseline;
         cwApi.Diagrams.CwDiagramShape.setFontInContext(ctx, region.RegionResultReadyToDisplay.style);
@@ -240,6 +241,7 @@
         ctx.fillText(region.filteredObjects.length, region.X + region.W / 2, region.Y + region.H / 2);
         ctx.textAlign = oldTextAlign;
         ctx.textBaseline = oldTextBaseline;
+        ctx.restore();
       }
     }
   };
