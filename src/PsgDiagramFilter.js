@@ -72,6 +72,7 @@
     var filterButton,
       o,
       that = this;
+    if (diagramViewer.$breadcrumb === undefined) return;
     filterButton = diagramViewer.$breadcrumb.find("a#cw-diagram-filter");
     var filterClass = "";
     if (this.filterEnable === true) filterClass = "enable";
@@ -226,7 +227,7 @@
 
   PsgDiagramFilter.prototype.drawNumberOfAssociation = function(shape, region) {
     if (region.RegionTypeString !== "MultiplePropertyAssociations" && region.RegionTypeString !== "Association") return 1;
-    if (region.filteredObjects.length > 0) {
+    if (region.filteredObjects && region.filteredObjects.length > 0) {
       let config = this.configuration[shape.shape.cwObject.objectTypeScriptName.toUpperCase()];
       config = config.regions[region.RegionSequence + "_" + shape.paletteEntry.PaletteObjectTypeCategory];
       if (config.calc === true) {

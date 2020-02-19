@@ -28,6 +28,7 @@
 
   PsgDiagramFilterManager.prototype.register = function() {
     cwApi.pluginManager.register("CwDiagramViewer.initWhenDomReady", this.init.bind(this));
+    cwApi.pluginManager.register("CwDiagramViewer.printDiagramReady", this.init.bind(this));
     cwApi.pluginManager.register("CwDiagramViewer.beforeDrawShapeRegion", this.setGlobalAlphaRegion.bind(this));
     cwApi.pluginManager.register("CwDiagramViewer.afterDrawShapeRegion", this.resetGlobalAlpha.bind(this));
   };

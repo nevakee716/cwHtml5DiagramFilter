@@ -52,4 +52,94 @@
       }
     }
   };
+
+  cwApi.Diagrams.CwDiagramViewer.prototype.getImageFromCanvas = function(title, sizeScale, e, isDiagramOverview, callback) {
+    var canvas,
+      diagramViewer,
+      $saveButton,
+      $container,
+      $canvas,
+      w,
+      h,
+      fileName,
+      diagramImage,
+      that = this,
+      exportId;
+    if (sizeScale === undefined) {
+      sizeScale = 5;
+    }
+
+    if (title === undefined || title === null || title === "" || title === "&nbsp;") title = "NoName";
+
+    fileName = title + ".png";
+    exportId = "SaveVectorToImage-" + this.id;
+
+    if (isDiagramOverview) {
+      $("body").append("<div id='" + exportId + "' class='cw-diagram-export-image' style = 'display: none;'></div>");
+    } else {
+      $("body").append("<div id='" + exportId + "' class='cw-diagram-export-image'></div>");
+    }
+
+    $container = $("#" + exportId);
+
+    diagramImage = {
+      $container: $container,
+      fileName: fileName,
+      diagramViewer: diagramViewer,
+      remove: function() {
+        if (diagramViewer !== undefined) {
+          diagramViewer.removed = true;
+        }
+        $container.remove();
+        that.removeSaveToImageLoader();
+      },
+    };
+
+    if (that.useImage === true) {
+      $container.append('<canvas id="canvas_temp_' + that.id + '" class="cwDiagramViewer" width="' + that.image.width + '" height="' + that.image.height + '"></canvas>');
+      $canvas = $container.find("#canvas_temp_" + that.id);
+      canvas = $canvas[0];
+      canvas.getContext("2d").drawImage(that.image, 0, 0);
+      diagramImage.canvas = canvas;
+      return callback && callback(diagramImage);
+    }
+    // is vector mode
+    var maxHeightWidth = this.getCanvasMaxHeight();
+
+    var scaleLimitByLength = (maxHeightWidth - 100) / Math.max(that.json.diagram.size.Height, that.json.diagram.size.Width);
+    var actualScale = Math.min(scaleLimitByLength, sizeScale);
+
+    w = that.json.diagram.size.Width * actualScale + 100;
+    h = that.json.diagram.size.Height * actualScale + 100;
+
+    var maxArea = this.getCanvasMaxArea();
+    if (w * h > maxArea) {
+      var rescaleRatio = Math.sqrt(maxArea / w / h);
+      w = Math.floor(w * rescaleRatio);
+      h = Math.floor(h * rescaleRatio);
+    }
+
+    $container.css("width", 500);
+    $container.css("height", 250);
+    diagramViewer = new cwAPI.Diagrams.CwDiagramViewer($container, false, that.BehaviourProperties);
+    diagramImage.diagramViewer = diagramViewer;
+    diagramViewer.onReadyToSaveAsImage = function() {
+      return callback && callback(diagramImage);
+    };
+    diagramViewer.json = that.json;
+    diagramViewer.isDiagramOverview = isDiagramOverview;
+    diagramViewer.isDraftDiagram = that.isDraftDiagram;
+    diagramViewer.initSave(sizeScale);
+    diagramImage.canvas = diagramViewer.$canvas[0];
+    // draw the diagram, then remove it asap
+    diagramViewer.$canvas.attr("width", w);
+    diagramViewer.$canvas.attr("height", h);
+    diagramViewer.$canvas.css("background-color", "transparent");
+    diagramViewer.ctx.canvas.width = w;
+    diagramViewer.ctx.canvas.height = h;
+    diagramViewer.setInitPositionAndScale(true, false, true, isDiagramOverview);
+    cwApi.pluginManager.execute("CwDiagramViewer.printDiagramReady", diagramViewer);
+    diagramViewer.tick();
+    diagramViewer.tick();
+  };
 })(cwAPI, jQuery);
