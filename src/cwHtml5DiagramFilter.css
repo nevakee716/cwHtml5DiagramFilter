@@ -39,17 +39,18 @@
 .cw-diagram-filter-container .buttonTd {
   width: 30px;
   text-align: center;
+  color: #808080;
 }
 .cw-diagram-filter-container .buttonTd i.active {
-  color: #03a0ce;
+  color: #e91b2b;
 }
 .cw-diagram-filter-container .cwPropertiesTableHeader i.fa {
   float: right;
   font-size: 20px;
-  color: #03a0ce;
+  color: #e91b2b;
 }
 .cw-diagram-filter-container .filterableRegion i {
-  color: #03a0ce;
+  color: #e91b2b;
   float: right;
 }
 .cw-diagram-filter-container i.buttonTd {
@@ -64,7 +65,7 @@
 }
 .cw-diagram-filter-container .filterDiagram table.cw-grid th {
   background-color: #03a0ce;
-  color: #fff;
+  color: #e91b2b;
 }
 .cw-diagram-filter-container .filterDiagram table.cw-grid tbody tr td:last-child {
   border-right: 1px solid #03a0ce;
@@ -137,6 +138,9 @@
 .cw-diagram-filter-container .filterDiagram table.cw-grid .filter-wrapper .filter-cell input[type="checkbox"] {
   margin: 0px;
 }
+.cw-diagram-filter-container .filterDiagram table.cw-grid .filter-wrapper .filter-cell .btn.page-action i {
+  color: #808080;
+}
 .cw-diagram-filter-container .filterDiagram table.cw-grid .header-cell {
   text-align: center;
   font-weight: bold;
@@ -145,7 +149,7 @@
   height: auto;
   width: auto;
   margin: 5px;
-  color: #ffffff;
+  color: #808080;
 }
 .btn.btn-diagram-filter.enable i.fa {
   color: #e9636e;
