@@ -282,7 +282,15 @@
         savedConfiguration = {};
       }
     }
-    Object.keys(this.diagramViewer.objectTypesStyles).forEach(function(key) {
+    let paletteKeys = Object.keys(this.diagramViewer.objectTypesStyles);
+    paletteKeys.sort(function(ka, kb) {
+      let a = ka.split("|");
+      let b = kb.split("|");
+      if (a[0] === b[0]) return a[1] - b[1];
+      return a[0] - b[0];
+    });
+
+    paletteKeys.forEach(function(key) {
       let paletteEntry = self.diagramViewer.objectTypesStyles[key];
       let s = key.split("|");
       let objectTypeScriptName = key.split("|")[0];
